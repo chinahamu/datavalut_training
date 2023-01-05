@@ -1,3 +1,5 @@
 app/AdventureWorks/logs/*
 app/AdventureWorks/tmp/*
 app/AdventureWorks/seeds/*.csv
+
+app/AdventureWorks/*.sql
