@@ -1,0 +1,611 @@
+version: 2
+models:
+  - name: hubs_address
+    columns:
+      - name: address_hk
+      - name: state_province_hk
+      - name: postal_c_hk
+      - name: address_id
+      - name: state_province_id
+      - name: postal_code
+      - name: loaded_at
+      - name: source
+  - name: hubs_country_region_currency
+    columns:
+      - name: country_region_c_hk
+      - name: currency_c_hk
+      - name: country_region_currency_hk
+      - name: country_region_code
+      - name: currency_code
+      - name: loaded_at
+      - name: source
+  - name: hubs_document
+    columns:
+      - name: document_hk
+      - name: loaded_at
+      - name: source
+  - name: hubs_job_candidate
+    columns:
+      - name: job_candidate_hk
+      - name: business_entity_hk
+      - name: job_candidate_id
+      - name: business_entity_id
+      - name: loaded_at
+      - name: source
+  - name: hubs_product
+    columns:
+      - name: product_hk
+      - name: size_unit_measure_c_hk
+      - name: weight_unit_measure_c_hk
+      - name: product_subcategory_hk
+      - name: product_model_hk
+      - name: product_id
+      - name: size_unit_measure_code
+      - name: weight_unit_measure_code
+      - name: product_subcategory_id
+      - name: product_model_id
+      - name: loaded_at
+      - name: source
+  - name: hubs_product_model
+    columns:
+      - name: product_model_hk
+      - name: product_model_id
+      - name: loaded_at
+      - name: source
+  - name: hubs_address_type
+    columns:
+      - name: address_type_hk
+      - name: address_type_id
+      - name: loaded_at
+      - name: source
+  - name: hubs_awbuild_version
+    columns:
+      - name: system_information_hk
+      - name: awbuild_version_hk
+      - name: system_information_id
+      - name: loaded_at
+      - name: source
+  - name: hubs_credit_card
+    columns:
+      - name: credit_card_hk
+      - name: credit_card_id
+      - name: loaded_at
+      - name: source
+  - name: hubs_bill_of_materials
+    columns:
+      - name: bill_of_materials_hk
+      - name: product_assembly_hk
+      - name: component_hk
+      - name: unit_measure_c_hk
+      - name: bill_of_materials_id
+      - name: product_assembly_id
+      - name: component_id
+      - name: unit_measure_code
+      - name: loaded_at
+      - name: source
+  - name: hubs_business_entity
+    columns:
+      - name: business_entity_hk
+      - name: business_entity_id
+      - name: loaded_at
+      - name: source
+  - name: hubs_business_entity_address
+    columns:
+      - name: business_entity_hk
+      - name: address_hk
+      - name: address_type_hk
+      - name: business_entity_address_hk
+      - name: business_entity_id
+      - name: address_id
+      - name: address_type_id
+      - name: loaded_at
+      - name: source
+  - name: hubs_business_entity_contact
+    columns:
+      - name: business_entity_hk
+      - name: person_hk
+      - name: contact_type_hk
+      - name: business_entity_contact_hk
+      - name: business_entity_id
+      - name: person_id
+      - name: contact_type_id
+      - name: loaded_at
+      - name: source
+  - name: hubs_product_vendor
+    columns:
+      - name: product_hk
+      - name: business_entity_hk
+      - name: unit_measure_c_hk
+      - name: product_vendor_hk
+      - name: product_id
+      - name: business_entity_id
+      - name: unit_measure_code
+      - name: loaded_at
+      - name: source
+  - name: hubs_sales_person
+    columns:
+      - name: business_entity_hk
+      - name: territory_hk
+      - name: sales_person_hk
+      - name: business_entity_id
+      - name: territory_id
+      - name: loaded_at
+      - name: source
+  - name: hubs_scrap_reason
+    columns:
+      - name: scrap_reason_hk
+      - name: scrap_reason_id
+      - name: loaded_at
+      - name: source
+  - name: hubs_special_offer_product
+    columns:
+      - name: special_offer_hk
+      - name: product_hk
+      - name: special_offer_product_hk
+      - name: special_offer_id
+      - name: product_id
+      - name: loaded_at
+      - name: source
+  - name: hubs_transaction_history_archive
+    columns:
+      - name: transaction_hk
+      - name: product_hk
+      - name: reference_order_hk
+      - name: reference_order_line_hk
+      - name: transaction_history_archive_hk
+      - name: transaction_id
+      - name: product_id
+      - name: reference_order_id
+      - name: reference_order_line_id
+      - name: loaded_at
+      - name: source
+  - name: hubs_work_order_routing
+    columns:
+      - name: work_order_hk
+      - name: product_hk
+      - name: location_hk
+      - name: work_order_routing_hk
+      - name: work_order_id
+      - name: product_id
+      - name: location_id
+      - name: loaded_at
+      - name: source
+  - name: hubs_email_address
+    columns:
+      - name: business_entity_hk
+      - name: email_address_hk
+      - name: business_entity_id
+      - name: email_address_id
+      - name: loaded_at
+      - name: source
+  - name: hubs_location
+    columns:
+      - name: location_hk
+      - name: location_id
+      - name: loaded_at
+      - name: source
+  - name: hubs_product_category
+    columns:
+      - name: product_category_hk
+      - name: product_category_id
+      - name: loaded_at
+      - name: source
+  - name: hubs_product_model_illustration
+    columns:
+      - name: product_model_hk
+      - name: illustration_hk
+      - name: product_model_illustration_hk
+      - name: product_model_id
+      - name: illustration_id
+      - name: loaded_at
+      - name: source
+  - name: hubs_culture
+    columns:
+      - name: culture_hk
+      - name: culture_id
+      - name: loaded_at
+      - name: source
+  - name: hubs_currency
+    columns:
+      - name: currency_c_hk
+      - name: currency_hk
+      - name: currency_code
+      - name: loaded_at
+      - name: source
+  - name: hubs_employee
+    columns:
+      - name: business_entity_hk
+      - name: login_hk
+      - name: employee_hk
+      - name: business_entity_id
+      - name: national_idnumber
+      - name: login_id
+      - name: loaded_at
+      - name: source
+  - name: hubs_password
+    columns:
+      - name: business_entity_hk
+      - name: password_hk
+      - name: business_entity_id
+      - name: loaded_at
+      - name: source
+  - name: hubs_product_cost_history
+    columns:
+      - name: product_hk
+      - name: product_cost_history_hk
+      - name: product_id
+      - name: loaded_at
+      - name: source
+  - name: hubs_product_model_product_description_culture
+    columns:
+      - name: product_model_hk
+      - name: product_description_hk
+      - name: culture_hk
+      - name: product_model_product_description_culture_hk
+      - name: product_model_id
+      - name: product_description_id
+      - name: culture_id
+      - name: loaded_at
+      - name: source
+  - name: hubs_purchase_order_detail
+    columns:
+      - name: purchase_order_hk
+      - name: purchase_order_detail_hk
+      - name: product_hk
+      - name: purchase_order_id
+      - name: purchase_order_detail_id
+      - name: product_id
+      - name: loaded_at
+      - name: source
+  - name: hubs_sales_person_quota_history
+    columns:
+      - name: business_entity_hk
+      - name: sales_person_quota_history_hk
+      - name: business_entity_id
+      - name: loaded_at
+      - name: source
+  - name: hubs_shift
+    columns:
+      - name: shift_hk
+      - name: shift_id
+      - name: loaded_at
+      - name: source
+  - name: hubs_state_province
+    columns:
+      - name: state_province_hk
+      - name: state_province_c_hk
+      - name: country_region_c_hk
+      - name: territory_hk
+      - name: state_province_id
+      - name: state_province_code
+      - name: country_region_code
+      - name: territory_id
+      - name: loaded_at
+      - name: source
+  - name: hubs_unit_measure
+    columns:
+      - name: unit_measure_c_hk
+      - name: unit_measure_hk
+      - name: unit_measure_code
+      - name: loaded_at
+      - name: source
+  - name: hubs_currency_rate
+    columns:
+      - name: currency_rate_hk
+      - name: from_currency_c_hk
+      - name: to_currency_c_hk
+      - name: currency_rate_id
+      - name: from_currency_code
+      - name: to_currency_code
+      - name: loaded_at
+      - name: source
+  - name: hubs_employee_department_history
+    columns:
+      - name: business_entity_hk
+      - name: department_hk
+      - name: shift_hk
+      - name: employee_department_history_hk
+      - name: business_entity_id
+      - name: department_id
+      - name: shift_id
+      - name: loaded_at
+      - name: source
+  - name: hubs_person
+    columns:
+      - name: business_entity_hk
+      - name: person_hk
+      - name: business_entity_id
+      - name: loaded_at
+      - name: source
+  - name: hubs_product_description
+    columns:
+      - name: product_description_hk
+      - name: product_description_id
+      - name: loaded_at
+      - name: source
+  - name: hubs_product_photo
+    columns:
+      - name: product_photo_hk
+      - name: product_photo_id
+      - name: loaded_at
+      - name: source
+  - name: hubs_purchase_order_header
+    columns:
+      - name: purchase_order_hk
+      - name: employee_hk
+      - name: vendor_hk
+      - name: ship_method_hk
+      - name: purchase_order_header_hk
+      - name: purchase_order_id
+      - name: employee_id
+      - name: vendor_id
+      - name: ship_method_id
+      - name: loaded_at
+      - name: source
+  - name: hubs_sales_reason
+    columns:
+      - name: sales_reason_hk
+      - name: sales_reason_id
+      - name: loaded_at
+      - name: source
+  - name: hubs_customer
+    columns:
+      - name: customer_hk
+      - name: person_hk
+      - name: store_hk
+      - name: territory_hk
+      - name: customer_id
+      - name: person_id
+      - name: store_id
+      - name: territory_id
+      - name: loaded_at
+      - name: source
+  - name: hubs_employee_pay_history
+    columns:
+      - name: business_entity_hk
+      - name: employee_pay_history_hk
+      - name: business_entity_id
+      - name: loaded_at
+      - name: source
+  - name: hubs_person_credit_card
+    columns:
+      - name: business_entity_hk
+      - name: credit_card_hk
+      - name: person_credit_card_hk
+      - name: business_entity_id
+      - name: credit_card_id
+      - name: loaded_at
+      - name: source
+  - name: hubs_product_document
+    columns:
+      - name: product_hk
+      - name: product_document_hk
+      - name: product_id
+      - name: loaded_at
+      - name: source
+  - name: hubs_product_product_photo
+    columns:
+      - name: product_hk
+      - name: product_photo_hk
+      - name: product_product_photo_hk
+      - name: product_id
+      - name: product_photo_id
+      - name: loaded_at
+      - name: source
+  - name: hubs_sales_order_detail
+    columns:
+      - name: sales_order_hk
+      - name: sales_order_detail_hk
+      - name: product_hk
+      - name: special_offer_hk
+      - name: sales_order_id
+      - name: sales_order_detail_id
+      - name: product_id
+      - name: special_offer_id
+      - name: loaded_at
+      - name: source
+  - name: hubs_sales_tax_rate
+    columns:
+      - name: sales_tax_rate_hk
+      - name: state_province_hk
+      - name: sales_tax_rate_id
+      - name: state_province_id
+      - name: loaded_at
+      - name: source
+  - name: hubs_ship_method
+    columns:
+      - name: ship_method_hk
+      - name: ship_method_id
+      - name: loaded_at
+      - name: source
+  - name: hubs_contact_type
+    columns:
+      - name: contact_type_hk
+      - name: contact_type_id
+      - name: loaded_at
+      - name: source
+  - name: hubs_database_log
+    columns:
+      - name: database_log_hk
+      - name: database_log_id
+      - name: loaded_at
+      - name: source
+  - name: hubs_error_log
+    columns:
+      - name: error_log_hk
+      - name: error_log_id
+      - name: loaded_at
+      - name: source
+  - name: hubs_person_phone
+    columns:
+      - name: business_entity_hk
+      - name: phone_number_type_hk
+      - name: person_phone_hk
+      - name: business_entity_id
+      - name: phone_number_type_id
+      - name: loaded_at
+      - name: source
+  - name: hubs_product_inventory
+    columns:
+      - name: product_hk
+      - name: location_hk
+      - name: product_inventory_hk
+      - name: product_id
+      - name: location_id
+      - name: loaded_at
+      - name: source
+  - name: hubs_product_review
+    columns:
+      - name: product_review_hk
+      - name: product_hk
+      - name: product_review_id
+      - name: product_id
+      - name: loaded_at
+      - name: source
+  - name: hubs_sales_order_header
+    columns:
+      - name: sales_order_hk
+      - name: customer_hk
+      - name: sales_person_hk
+      - name: territory_hk
+      - name: bill_to_address_hk
+      - name: ship_to_address_hk
+      - name: ship_method_hk
+      - name: credit_card_hk
+      - name: credit_card_approval_c_hk
+      - name: currency_rate_hk
+      - name: sales_order_header_hk
+      - name: sales_order_id
+      - name: customer_id
+      - name: sales_person_id
+      - name: territory_id
+      - name: bill_to_address_id
+      - name: ship_to_address_id
+      - name: ship_method_id
+      - name: credit_card_id
+      - name: credit_card_approval_code
+      - name: currency_rate_id
+      - name: loaded_at
+      - name: source
+  - name: hubs_sales_territory
+    columns:
+      - name: territory_hk
+      - name: country_region_c_hk
+      - name: sales_territory_hk
+      - name: territory_id
+      - name: country_region_code
+      - name: loaded_at
+      - name: source
+  - name: hubs_shopping_cart_item
+    columns:
+      - name: shopping_cart_item_hk
+      - name: shopping_cart_hk
+      - name: product_hk
+      - name: shopping_cart_item_id
+      - name: shopping_cart_id
+      - name: product_id
+      - name: loaded_at
+      - name: source
+  - name: hubs_store
+    columns:
+      - name: business_entity_hk
+      - name: sales_person_hk
+      - name: store_hk
+      - name: business_entity_id
+      - name: sales_person_id
+      - name: loaded_at
+      - name: source
+  - name: hubs_vendor
+    columns:
+      - name: business_entity_hk
+      - name: vendor_hk
+      - name: business_entity_id
+      - name: loaded_at
+      - name: source
+  - name: hubs_country_region
+    columns:
+      - name: country_region_c_hk
+      - name: country_region_hk
+      - name: country_region_code
+      - name: loaded_at
+      - name: source
+  - name: hubs_department
+    columns:
+      - name: department_hk
+      - name: department_id
+      - name: loaded_at
+      - name: source
+  - name: hubs_illustration
+    columns:
+      - name: illustration_hk
+      - name: illustration_id
+      - name: loaded_at
+      - name: source
+  - name: hubs_phone_number_type
+    columns:
+      - name: phone_number_type_hk
+      - name: phone_number_type_id
+      - name: loaded_at
+      - name: source
+  - name: hubs_product_list_price_history
+    columns:
+      - name: product_hk
+      - name: product_list_price_history_hk
+      - name: product_id
+      - name: loaded_at
+      - name: source
+  - name: hubs_product_subcategory
+    columns:
+      - name: product_subcategory_hk
+      - name: product_category_hk
+      - name: product_subcategory_id
+      - name: product_category_id
+      - name: loaded_at
+      - name: source
+  - name: hubs_sales_order_header_sales_reason
+    columns:
+      - name: sales_order_hk
+      - name: sales_reason_hk
+      - name: sales_order_header_sales_reason_hk
+      - name: sales_order_id
+      - name: sales_reason_id
+      - name: loaded_at
+      - name: source
+  - name: hubs_sales_territory_history
+    columns:
+      - name: business_entity_hk
+      - name: territory_hk
+      - name: sales_territory_history_hk
+      - name: business_entity_id
+      - name: territory_id
+      - name: loaded_at
+      - name: source
+  - name: hubs_special_offer
+    columns:
+      - name: special_offer_hk
+      - name: special_offer_id
+      - name: loaded_at
+      - name: source
+  - name: hubs_transaction_history
+    columns:
+      - name: transaction_hk
+      - name: product_hk
+      - name: reference_order_hk
+      - name: reference_order_line_hk
+      - name: transaction_history_hk
+      - name: transaction_id
+      - name: product_id
+      - name: reference_order_id
+      - name: reference_order_line_id
+      - name: loaded_at
+      - name: source
+  - name: hubs_work_order
+    columns:
+      - name: work_order_hk
+      - name: product_hk
+      - name: scrap_reason_hk
+      - name: work_order_id
+      - name: product_id
+      - name: scrap_reason_id
+      - name: loaded_at
+      - name: source

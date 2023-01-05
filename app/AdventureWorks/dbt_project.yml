@@ -1,0 +1,41 @@
+# dbt_project.yml
+
+name: AdventureWorks
+
+version: '1.0.0'
+
+config-version: 2
+
+profile: AdventureWorks
+
+model-paths: ["models"]
+analysis-paths: ["analyses"]
+test-paths: ["tests"]
+seed-paths: ["seeds"]
+macro-paths: ["macros"]
+snapshot-paths: ["snapshots"]
+
+target-path: "target"
+clean-targets:
+  - "target"
+  - "dbt_packages"
+
+models:
+  AdventureWorks:
+    staging:
+      +dbt-osmosis: "folder.yml"
+      +schema: staging
+      +materialized: view
+    hubs:
+      +dbt-osmosis: "folder.yml"
+      +schema: hub
+      +materialized: view
+    +materialized: view
+    links:
+      +dbt-osmosis: "folder.yml"
+      +schema: link
+      +materialized: view
+    sat:
+      +dbt-osmosis: "folder.yml"
+      +schema: sat
+      +materialized: view

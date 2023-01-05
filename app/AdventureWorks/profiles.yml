@@ -1,0 +1,12 @@
+AdventureWorks:
+  target: dev
+  outputs:
+    dev:
+      type: postgres
+      host: 172.19.0.2
+      user: dbt
+      password: password
+      port: 5432
+      dbname: main
+      schema: main
+      threads: 1

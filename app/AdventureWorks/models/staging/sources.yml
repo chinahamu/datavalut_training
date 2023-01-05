@@ -1,0 +1,704 @@
+version: 2
+sources:
+  - database: main
+    name: main
+    tables:
+      - name: address
+        columns:
+          - name: rowguid
+          - name: address_line1
+          - name: address_id
+          - name: city
+          - name: loaded_at
+          - name: address_line2
+          - name: spatial_location
+          - name: postal_code
+          - name: state_province_id
+          - name: modified_date
+      - name: country_region_currency
+        columns:
+          - name: loaded_at
+          - name: country_region_code
+          - name: modified_date
+          - name: currency_code
+      - name: document
+        columns:
+          - name: title
+          - name: document_level
+          - name: rowguid
+          - name: document_node
+          - name: loaded_at
+          - name: document_summary
+          - name: file_extension
+          - name: file_name
+          - name: change_number
+          - name: status
+          - name: document
+          - name: owner
+          - name: folder_flag
+          - name: revision
+          - name: modified_date
+      - name: job_candidate
+        columns:
+          - name: business_entity_id
+          - name: loaded_at
+          - name: resume
+          - name: job_candidate_id
+          - name: modified_date
+      - name: product
+        columns:
+          - name: product_id
+          - name: make_flag
+          - name: days_to_manufacture
+          - name: reorder_point
+          - name: rowguid
+          - name: safety_stock_level
+          - name: weight
+          - name: product_subcategory_id
+          - name: class
+          - name: size
+          - name: finished_goods_flag
+          - name: discontinued_date
+          - name: size_unit_measure_code
+          - name: product_number
+          - name: list_price
+          - name: color
+          - name: loaded_at
+          - name: weight_unit_measure_code
+          - name: product_line
+          - name: sell_start_date
+          - name: sell_end_date
+          - name: standard_cost
+          - name: name
+          - name: product_model_id
+          - name: style
+          - name: modified_date
+      - name: product_model
+        columns:
+          - name: rowguid
+          - name: instructions
+          - name: name
+          - name: loaded_at
+          - name: catalog_description
+          - name: product_model_id
+          - name: modified_date
+      - name: address_type
+        columns:
+          - name: rowguid
+          - name: address_type_id
+          - name: loaded_at
+          - name: name
+          - name: modified_date
+      - name: awbuild_version
+        columns:
+          - name: loaded_at
+          - name: version_date
+          - name: system_information_id
+          - name: modified_date
+          - name: database_version
+      - name: credit_card
+        columns:
+          - name: card_number
+          - name: card_type
+          - name: exp_year
+          - name: exp_month
+          - name: credit_card_id
+          - name: modified_date
+          - name: loaded_at
+      - name: bill_of_materials
+        columns:
+          - name: start_date
+          - name: component_id
+          - name: product_assembly_id
+          - name: loaded_at
+          - name: per_assembly_qty
+          - name: unit_measure_code
+          - name: bomlevel
+          - name: end_date
+          - name: bill_of_materials_id
+          - name: modified_date
+      - name: business_entity
+        columns:
+          - name: business_entity_id
+          - name: rowguid
+          - name: loaded_at
+          - name: modified_date
+      - name: business_entity_address
+        columns:
+          - name: rowguid
+          - name: business_entity_id
+          - name: address_type_id
+          - name: address_id
+          - name: loaded_at
+          - name: modified_date
+      - name: business_entity_contact
+        columns:
+          - name: rowguid
+          - name: person_id
+          - name: business_entity_id
+          - name: loaded_at
+          - name: contact_type_id
+          - name: modified_date
+      - name: product_vendor
+        columns:
+          - name: standard_price
+          - name: last_receipt_date
+          - name: product_id
+          - name: business_entity_id
+          - name: max_order_qty
+          - name: loaded_at
+          - name: unit_measure_code
+          - name: last_receipt_cost
+          - name: on_order_qty
+          - name: min_order_qty
+          - name: average_lead_time
+          - name: modified_date
+      - name: sales_person
+        columns:
+          - name: rowguid
+          - name: business_entity_id
+          - name: commission_pct
+          - name: territory_id
+          - name: loaded_at
+          - name: sales_ytd
+          - name: modified_date
+          - name: sales_quota
+          - name: sales_last_year
+          - name: bonus
+      - name: scrap_reason
+        columns:
+          - name: scrap_reason_id
+          - name: loaded_at
+          - name: name
+          - name: modified_date
+      - name: special_offer_product
+        columns:
+          - name: rowguid
+          - name: product_id
+          - name: loaded_at
+          - name: special_offer_id
+          - name: modified_date
+      - name: transaction_history_archive
+        columns:
+          - name: transaction_date
+          - name: transaction_type
+          - name: product_id
+          - name: reference_order_id
+          - name: reference_order_line_id
+          - name: loaded_at
+          - name: quantity
+          - name: actual_cost
+          - name: transaction_id
+          - name: modified_date
+      - name: work_order_routing
+        columns:
+          - name: scheduled_end_date
+          - name: actual_start_date
+          - name: location_id
+          - name: actual_cost
+          - name: product_id
+          - name: planned_cost
+          - name: work_order_id
+          - name: loaded_at
+          - name: scheduled_start_date
+          - name: actual_end_date
+          - name: actual_resource_hrs
+          - name: operation_sequence
+          - name: modified_date
+      - name: email_address
+        columns:
+          - name: rowguid
+          - name: business_entity_id
+          - name: email_address_id
+          - name: loaded_at
+          - name: email_address
+          - name: modified_date
+      - name: location
+        columns:
+          - name: cost_rate
+          - name: availability
+          - name: location_id
+          - name: name
+          - name: loaded_at
+          - name: modified_date
+      - name: product_category
+        columns:
+          - name: rowguid
+          - name: loaded_at
+          - name: name
+          - name: product_category_id
+          - name: modified_date
+      - name: product_model_illustration
+        columns:
+          - name: loaded_at
+          - name: illustration_id
+          - name: product_model_id
+          - name: modified_date
+      - name: culture
+        columns:
+          - name: loaded_at
+          - name: culture_id
+          - name: name
+          - name: modified_date
+      - name: currency
+        columns:
+          - name: loaded_at
+          - name: modified_date
+          - name: name
+          - name: currency_code
+      - name: employee
+        columns:
+          - name: organization_node
+          - name: login_id
+          - name: marital_status
+          - name: gender
+          - name: rowguid
+          - name: organization_level
+          - name: business_entity_id
+          - name: salaried_flag
+          - name: loaded_at
+          - name: national_idnumber
+          - name: vacation_hours
+          - name: current_flag
+          - name: job_title
+          - name: hire_date
+          - name: sick_leave_hours
+          - name: birth_date
+          - name: modified_date
+      - name: password
+        columns:
+          - name: rowguid
+          - name: business_entity_id
+          - name: password_hash
+          - name: loaded_at
+          - name: password_salt
+          - name: modified_date
+      - name: product_cost_history
+        columns:
+          - name: start_date
+          - name: product_id
+          - name: standard_cost
+          - name: loaded_at
+          - name: end_date
+          - name: modified_date
+      - name: product_model_product_description_culture
+        columns:
+          - name: product_description_id
+          - name: culture_id
+          - name: loaded_at
+          - name: product_model_id
+          - name: modified_date
+      - name: purchase_order_detail
+        columns:
+          - name: order_qty
+          - name: product_id
+          - name: unit_price
+          - name: purchase_order_detail_id
+          - name: loaded_at
+          - name: due_date
+          - name: purchase_order_id
+          - name: modified_date
+          - name: stocked_qty
+          - name: rejected_qty
+          - name: line_total
+          - name: received_qty
+      - name: sales_person_quota_history
+        columns:
+          - name: rowguid
+          - name: quota_date
+          - name: business_entity_id
+          - name: loaded_at
+          - name: sales_quota
+          - name: modified_date
+      - name: shift
+        columns:
+          - name: shift_id
+          - name: name
+          - name: loaded_at
+          - name: start_time
+          - name: end_time
+          - name: modified_date
+      - name: state_province
+        columns:
+          - name: is_only_state_province_flag
+          - name: rowguid
+          - name: country_region_code
+          - name: state_province_code
+          - name: territory_id
+          - name: name
+          - name: loaded_at
+          - name: state_province_id
+          - name: modified_date
+      - name: unit_measure
+        columns:
+          - name: unit_measure_code
+          - name: loaded_at
+          - name: name
+          - name: modified_date
+      - name: currency_rate
+        columns:
+          - name: currency_rate_id
+          - name: from_currency_code
+          - name: loaded_at
+          - name: average_rate
+          - name: currency_rate_date
+          - name: end_of_day_rate
+          - name: to_currency_code
+          - name: modified_date
+      - name: employee_department_history
+        columns:
+          - name: shift_id
+          - name: start_date
+          - name: business_entity_id
+          - name: loaded_at
+          - name: department_id
+          - name: end_date
+          - name: modified_date
+      - name: person
+        columns:
+          - name: title
+          - name: suffix
+          - name: rowguid
+          - name: additional_contact_info
+          - name: business_entity_id
+          - name: middle_name
+          - name: person_type
+          - name: loaded_at
+          - name: email_promotion
+          - name: last_name
+          - name: demographics
+          - name: first_name
+          - name: name_style
+          - name: modified_date
+      - name: product_description
+        columns:
+          - name: product_description_id
+          - name: rowguid
+          - name: loaded_at
+          - name: description
+          - name: modified_date
+      - name: product_photo
+        columns:
+          - name: loaded_at
+          - name: product_photo_id
+          - name: thumb_nail_photo
+          - name: large_photo
+          - name: thumbnail_photo_file_name
+          - name: large_photo_file_name
+          - name: modified_date
+      - name: purchase_order_header
+        columns:
+          - name: order_date
+          - name: vendor_id
+          - name: total_due
+          - name: sub_total
+          - name: employee_id
+          - name: freight
+          - name: loaded_at
+          - name: ship_method_id
+          - name: status
+          - name: purchase_order_id
+          - name: tax_amt
+          - name: revision_number
+          - name: ship_date
+          - name: modified_date
+      - name: sales_reason
+        columns:
+          - name: reason_type
+          - name: loaded_at
+          - name: name
+          - name: sales_reason_id
+          - name: modified_date
+      - name: customer
+        columns:
+          - name: rowguid
+          - name: account_number
+          - name: person_id
+          - name: territory_id
+          - name: loaded_at
+          - name: customer_id
+          - name: store_id
+          - name: modified_date
+      - name: employee_pay_history
+        columns:
+          - name: business_entity_id
+          - name: rate
+          - name: pay_frequency
+          - name: loaded_at
+          - name: rate_change_date
+          - name: modified_date
+      - name: person_credit_card
+        columns:
+          - name: business_entity_id
+          - name: loaded_at
+          - name: modified_date
+          - name: credit_card_id
+      - name: product_document
+        columns:
+          - name: product_id
+          - name: loaded_at
+          - name: document_node
+          - name: modified_date
+      - name: product_product_photo
+        columns:
+          - name: product_id
+          - name: loaded_at
+          - name: product_photo_id
+          - name: modified_date
+          - name: primary_key
+      - name: sales_order_detail
+        columns:
+          - name: order_qty
+          - name: rowguid
+          - name: product_id
+          - name: sales_order_id
+          - name: unit_price
+          - name: unit_price_discount
+          - name: loaded_at
+          - name: special_offer_id
+          - name: modified_date
+          - name: carrier_tracking_number
+          - name: line_total
+          - name: sales_order_detail_id
+      - name: sales_tax_rate
+        columns:
+          - name: rowguid
+          - name: tax_rate
+          - name: sales_tax_rate_id
+          - name: name
+          - name: loaded_at
+          - name: state_province_id
+          - name: tax_type
+          - name: modified_date
+      - name: ship_method
+        columns:
+          - name: rowguid
+          - name: ship_base
+          - name: ship_rate
+          - name: name
+          - name: loaded_at
+          - name: ship_method_id
+          - name: modified_date
+      - name: contact_type
+        columns:
+          - name: loaded_at
+          - name: name
+          - name: contact_type_id
+          - name: modified_date
+      - name: database_log
+        columns:
+          - name: post_time
+          - name: xml_event
+          - name: loaded_at
+          - name: object
+          - name: tsql
+          - name: database_log_id
+          - name: schema
+          - name: event
+          - name: database_user
+      - name: error_log
+        columns:
+          - name: error_number
+          - name: error_time
+          - name: error_log_id
+          - name: error_state
+          - name: error_procedure
+          - name: user_name
+          - name: loaded_at
+          - name: error_message
+          - name: error_line
+          - name: error_severity
+      - name: person_phone
+        columns:
+          - name: business_entity_id
+          - name: loaded_at
+          - name: phone_number
+          - name: phone_number_type_id
+          - name: modified_date
+      - name: product_inventory
+        columns:
+          - name: rowguid
+          - name: shelf
+          - name: location_id
+          - name: product_id
+          - name: loaded_at
+          - name: quantity
+          - name: bin
+          - name: modified_date
+      - name: product_review
+        columns:
+          - name: product_id
+          - name: product_review_id
+          - name: rating
+          - name: review_date
+          - name: comments
+          - name: loaded_at
+          - name: reviewer_name
+          - name: email_address
+          - name: modified_date
+      - name: sales_order_header
+        columns:
+          - name: sales_order_number
+          - name: comment
+          - name: freight
+          - name: customer_id
+          - name: revision_number
+          - name: bill_to_address_id
+          - name: currency_rate_id
+          - name: total_due
+          - name: rowguid
+          - name: account_number
+          - name: sales_order_id
+          - name: due_date
+          - name: credit_card_id
+          - name: tax_amt
+          - name: online_order_flag
+          - name: ship_date
+          - name: territory_id
+          - name: loaded_at
+          - name: ship_method_id
+          - name: credit_card_approval_code
+          - name: ship_to_address_id
+          - name: order_date
+          - name: sub_total
+          - name: sales_person_id
+          - name: status
+          - name: purchase_order_number
+          - name: modified_date
+      - name: sales_territory
+        columns:
+          - name: cost_ytd
+          - name: country_region_code
+          - name: rowguid
+          - name: territory_id
+          - name: name
+          - name: cost_last_year
+          - name: loaded_at
+          - name: sales_ytd
+          - name: sales_last_year
+          - name: modified_date
+          - name: region
+      - name: shopping_cart_item
+        columns:
+          - name: product_id
+          - name: loaded_at
+          - name: quantity
+          - name: shopping_cart_item_id
+          - name: shopping_cart_id
+          - name: date_created
+          - name: modified_date
+      - name: store
+        columns:
+          - name: rowguid
+          - name: sales_person_id
+          - name: business_entity_id
+          - name: name
+          - name: loaded_at
+          - name: demographics
+          - name: modified_date
+      - name: vendor
+        columns:
+          - name: preferred_vendor_status
+          - name: purchasing_web_service_url
+          - name: account_number
+          - name: credit_rating
+          - name: business_entity_id
+          - name: name
+          - name: loaded_at
+          - name: active_flag
+          - name: modified_date
+      - name: country_region
+        columns:
+          - name: loaded_at
+          - name: country_region_code
+          - name: name
+          - name: modified_date
+      - name: department
+        columns:
+          - name: loaded_at
+          - name: name
+          - name: department_id
+          - name: group_name
+          - name: modified_date
+      - name: illustration
+        columns:
+          - name: loaded_at
+          - name: diagram
+          - name: illustration_id
+          - name: modified_date
+      - name: phone_number_type
+        columns:
+          - name: loaded_at
+          - name: phone_number_type_id
+          - name: name
+          - name: modified_date
+      - name: product_list_price_history
+        columns:
+          - name: start_date
+          - name: product_id
+          - name: list_price
+          - name: loaded_at
+          - name: end_date
+          - name: modified_date
+      - name: product_subcategory
+        columns:
+          - name: rowguid
+          - name: product_subcategory_id
+          - name: name
+          - name: loaded_at
+          - name: product_category_id
+          - name: modified_date
+      - name: sales_order_header_sales_reason
+        columns:
+          - name: loaded_at
+          - name: sales_order_id
+          - name: modified_date
+          - name: sales_reason_id
+      - name: sales_territory_history
+        columns:
+          - name: start_date
+          - name: rowguid
+          - name: business_entity_id
+          - name: territory_id
+          - name: loaded_at
+          - name: end_date
+          - name: modified_date
+      - name: special_offer
+        columns:
+          - name: min_qty
+          - name: start_date
+          - name: rowguid
+          - name: category
+          - name: loaded_at
+          - name: special_offer_id
+          - name: modified_date
+          - name: end_date
+          - name: description
+          - name: type
+          - name: discount_pct
+          - name: max_qty
+      - name: transaction_history
+        columns:
+          - name: transaction_date
+          - name: transaction_type
+          - name: product_id
+          - name: reference_order_id
+          - name: reference_order_line_id
+          - name: loaded_at
+          - name: quantity
+          - name: actual_cost
+          - name: transaction_id
+          - name: modified_date
+      - name: work_order
+        columns:
+          - name: start_date
+          - name: order_qty
+          - name: product_id
+          - name: work_order_id
+          - name: loaded_at
+          - name: scrapped_qty
+          - name: due_date
+          - name: scrap_reason_id
+          - name: end_date
+          - name: stocked_qty
+          - name: modified_date
